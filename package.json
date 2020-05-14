@@ -15,6 +15,7 @@
     "@hapi/joi": "^17.1.1",
     "@hapi/joi-date": "^2.0.1",
     "dotenv": "^8.2.0",
+    "hapi-auto-route": "^3.0.4",
     "mongoose": "^5.9.12"
   }
 }

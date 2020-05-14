@@ -1,1 +1,1 @@
-exports.Note = require('./note')
+exports.Note = require('./note');
