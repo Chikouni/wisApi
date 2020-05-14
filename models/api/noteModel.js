@@ -1,6 +1,6 @@
 const Mongoose = require("mongoose");
 
-const noteModel = Mongoose.Schema(
+const noteSchema = Mongoose.Schema(
   {
     note: String,
     createdBy: { type: String, default: "Anonym" },
@@ -8,4 +8,4 @@ const noteModel = Mongoose.Schema(
   { timestamps: true }
 );
 
-const Note = (module.exports = Mongoose.model("Note", noteModel));
+exports.Model = Mongoose.model("Note", noteSchema);

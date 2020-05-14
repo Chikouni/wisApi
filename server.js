@@ -1,6 +1,5 @@
 "use strict";
 require("dotenv").config();
-require('./models');
 const Hapi = require("@hapi/hapi");
 const Mongoose = require("mongoose");
 const Path = require('path');
@@ -20,7 +19,8 @@ const init = async () => {
   await server.register({
     plugin: require('hapi-auto-route'),
     options: {
-      routes_dir: Path.join(__dirname, 'routes')
+      routes_dir: Path.join(__dirname, 'routes'),
+      pattern: "**/!(_)*.js"
     }
    });
   await server.start();

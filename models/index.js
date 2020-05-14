@@ -1,1 +1,0 @@
-exports.Note = require('./note');
