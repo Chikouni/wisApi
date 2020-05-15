@@ -15,6 +15,11 @@ module.exports = [
     method: "GET",
     path: getPath,
     handler: noteController.getNotes,
+  },  
+  {
+    method: "GET",
+    path: pathWithId,
+    handler: noteController.getNote,
   },
   {
     method: "PUT",

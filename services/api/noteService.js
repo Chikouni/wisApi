@@ -20,6 +20,14 @@ exports.getNotes = async () => {
   }
 };
 
+exports.getNote = async (request) => {
+  try {
+    return await NoteModel.findById(request.params.id);
+  } catch (e) {
+    throw Boom.badRequest(e);
+  }
+};
+
 exports.updateNote = async (request) => {
   try {
     const updatedNote = await NoteModel.findByIdAndUpdate(

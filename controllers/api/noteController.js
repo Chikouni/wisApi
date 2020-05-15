@@ -34,6 +34,15 @@ exports.getNotes = async (request, h) => {
   }
 };
 
+exports.getNote = async (request, h) => {
+  try {
+    var notes = await NoteService.getNote(request);
+    return h.response(notes);
+  } catch (error) {
+    return h.response(error).code(500);
+  }
+};
+
 exports.updateNote = async (request, h) => {
   try {
     var result = await NoteService.updateNote(request);
@@ -45,7 +54,7 @@ exports.updateNote = async (request, h) => {
 
 exports.deleteNote = async (request, h) => {
   try {
-    var result = await NoteService.updateNote(request);
+    var result = await NoteService.deleteNote(request);
     return h.response(result);
   } catch (error) {
     return h.response(error).code(500);
